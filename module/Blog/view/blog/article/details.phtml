@@ -1,0 +1,11 @@
+<h2><?php echo $this->escapeHTML($article->getTitre()); ?></h2>
+
+<p>
+    <?php echo $this->escapeHTML($article->getContenu()); ?>
+</p>
+
+<p>
+    <a href="<?php echo $this->url('home'); ?>">
+        Retour à la liste des articles
+    </a>
+</p>

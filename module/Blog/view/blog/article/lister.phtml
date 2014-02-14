@@ -1,0 +1,21 @@
+
+<?php if( $this->flashMessenger()->hasSuccessMessages()): ?>
+<div class='alert-success'>
+    <ul>
+    <?php foreach ($this->flashMessenger()->getSuccessMessages() as $msg) : ?>
+        <li><?php echo $msg ?></li>
+     <?php    endforeach; ?>
+    </ul>
+</div>
+    
+<?php endif ;?>
+<h2>Liste des articles</h2>
+<ul>
+    <?php foreach($listeArticles as $article) : ?>
+    <li>
+        <a href="<?php echo $this->url('article_details', array("id" => $article->getId())); ?>">
+            <?php echo $this->escapeHTML($article->getTitre()); ?>
+        </a>
+    </li>
+    <?php endforeach; ?>
+</ul>

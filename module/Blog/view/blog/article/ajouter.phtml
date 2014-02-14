@@ -1,0 +1,31 @@
+<h2>Ajouter un articles</h2>
+
+<?php // echo $this->form($form); ?>
+
+<?php echo $this->form()->openTag($form); ?>
+<div class="form-group">    
+    <?php echo $this->formLabel($form->get("titre")); ?>
+    <?php echo $this->formElement($form->get("titre")->setAttribute("class", "form-control")); ?>
+    <?php if(!$form->getInputFilter()->get("titre")->isValid()): ?>
+    <span  class="form-group has-error">
+        <label  class="control-label" for="inputError1">
+            <?php echo $this->formElementErrors($form->get("titre")); ?>
+        </label>
+    </span>
+    <?php endif; ?>
+</div>
+<div class="form-group">    
+    <?php echo $this->formLabel($form->get("contenu")); ?>
+    <?php echo $this->formElement($form->get("contenu")->setAttribute("class", "form-control")); ?>
+    <?php if(!$form->getInputFilter()->get("titre")->isValid()): ?>
+    <span  class="form-group has-error">
+        <label  class="control-label" for="inputError1">
+            <?php echo $this->formElementErrors($form->get("contenu")); ?>
+        </label>
+    </span>
+    <?php endif; ?>
+</div>
+<button class="btn btn-primary">Ajouter un article</button>
+
+
+<?php echo $this->form()->closeTag($form); ?>
